@@ -21,6 +21,7 @@ from .views import root_route
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('students.urls')),
+    path('backend-auth/', include('rest_framework.urls')),
     path('', root_route),
 
 ]
