@@ -34,7 +34,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us104.gitpod.io','localhost' ]
+ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us104.gitpod.io','localhost' ,'https://students-886282cc0213.herokuapp.com']
 
 
 REST_FRAMEWORK = {
