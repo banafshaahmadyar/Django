@@ -32,8 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = 'DEV' in os.environ
+
 
 ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us104.gitpod.io','localhost' ,'students-886282cc0213.herokuapp.com']
 
@@ -55,6 +55,13 @@ if 'DEV' not in os.environ:
     ]
 
 
+REST_USE_JWT = True
+JWT_AUTH_SECURE = True
+JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = 'None'
+
+
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'backend.serializers.CurrentUserSerializer'
 }
@@ -74,6 +81,7 @@ INSTALLED_APPS = [
     "students.apps.StudentsConfig",
     "rest_framework",
     "corsheaders",
+    'dj_rest_auth.registration',
     
 
 
