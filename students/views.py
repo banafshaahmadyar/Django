@@ -4,18 +4,14 @@ from django.http.response import JsonResponse
 from .models import Student
 from django.http.response import Http404
 from rest_framework.response import Response
-from backend.permissions import IsOwnerOrReadOnly
 
 
 class StudentView(APIView):
 
-    permission_classes =[IsOwnerOrReadOnly]
-
-
     def get_student(self, pk):
         try:
             student = Student.objects.get(studentId=pk)
-            self.check_object_permissions (self.request, Student)
+            self.check_object_permissions (self.request, state)
             return student
         except:
             return JsonResponse("Student Does Not Exist", safe=False)
@@ -24,20 +20,14 @@ class StudentView(APIView):
         if pk:
             data = self.get_student(pk)
             serializer = StudentSerializer(data)
-            context= {'request' : request}
-
         else:
             data = Student.objects.all()
             serializer = StudentSerializer(data, many=True)
-            context= {'request' : request}
-
         return Response(serializer.data)
 
     def post(self, request):
         data = request.data
         serializer = StudentSerializer(data=data)
-        context= {'request' : request}
-
 
         if serializer.is_valid():
             serializer.save()
@@ -47,8 +37,6 @@ class StudentView(APIView):
     def put(self, request, pk=None):
         student_to_update = Student.objects.get(studentId=pk)
         serializer = StudentSerializer(instance=student_to_update, data=request.data, partial=True)
-        context= {'request' : request}
-
 
         if serializer.is_valid():
             serializer.save()
