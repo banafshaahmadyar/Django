@@ -80,6 +80,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -87,7 +88,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+]
+
+# ADDED ALLOWED CORS ORIGIN
+CORS_ALLOWED_ORIGINS = [
+    'https://3000-banafshaahmadyar-react-ylip8dxxqkl.ws-us104.gitpod.io',
 ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
