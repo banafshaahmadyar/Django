@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # DEBUG = 'DEV' in os.environ
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us104.gitpod.io',
+ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us104.gitpod.io', 'https://react-students-297a74c90fad.herokuapp.com'
                  'localhost', os.environ.get('ALLOWED_HOST'),]
 
 
@@ -93,6 +93,7 @@ MIDDLEWARE = [
 # ADDED ALLOWED CORS ORIGIN
 CORS_ALLOWED_ORIGINS = [
     'https://3000-banafshaahmadyar-react-ylip8dxxqkl.ws-us104.gitpod.io',
+    'https://react-students-297a74c90fad.herokuapp.com',
 ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
