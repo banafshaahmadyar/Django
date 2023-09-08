@@ -3,6 +3,17 @@ from .models import Student
 from django.contrib.auth import get_user_model, authenticate
 
 
+from dj_rest_auth.serializers import UserDetailsSerializer
+
+
+class CurrentUserSerializer(UserDetailsSerializer):
+    Student_id = serializers.ReadOnlyField(source='student.id')
+
+    class Meta(UserDetailsSerializer.Meta):
+        fields = UserDetailsSerializer.Meta.fields + (
+            'profile_id',
+        )
+
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
