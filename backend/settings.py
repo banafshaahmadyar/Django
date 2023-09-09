@@ -64,6 +64,8 @@ JWT_AUTH_SAMESITE='None'
 if 'DEV' not in os.environ:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.JSONRenderer',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+
     ]
 
 
@@ -91,7 +93,7 @@ INSTALLED_APPS = [
     'allauth.account', 
     'allauth.socialaccount', 
     'dj_rest_auth.registration',
-    
+    'api',
     
 
 
