@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # DEBUG = 'DEV' in os.environ
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us104.gitpod.io', 'https://react-students-297a74c90fad.herokuapp.com'
+ALLOWED_HOSTS = ['8000-banafshaahmadyar-djnago-fjabwetfgyc.ws-us105.gitpod.io', 'https://react-students-297a74c90fad.herokuapp.com'
                  'localhost', os.environ.get('ALLOWED_HOST'),]
 
 
@@ -95,7 +95,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount', 
     'dj_rest_auth.registration',
     'api',
-    
 
 
 ]
