@@ -113,7 +113,7 @@ MIDDLEWARE = [
 
 # ADDED ALLOWED CORS ORIGIN
 CORS_ALLOWED_ORIGINS = [
-    'https://3000-banafshaahmadyar-react-ylip8dxxqkl.ws-us104.gitpod.io',
+    'https://3000-banafshaahmadyar-react-ylip8dxxqkl.ws-us105.gitpod.io',
     'https://react-students-297a74c90fad.herokuapp.com',
 ]
 
